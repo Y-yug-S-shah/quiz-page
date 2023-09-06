@@ -122,16 +122,21 @@
     <script>
         const questions = [
             {
-                question: "What is the capital of France?",
-                options: ["Paris", "London", "Berlin", "Madrid"],
-                correctAnswer: 0,
+                question: "What is the capital of India?",
+                options: ["Gujarat", "Maharashtra", "Delhi", "Hyderabad"],
+                correctAnswer: 2,
             },
             {
-                question: "Which planet is known as the Red Planet?",
-                options: ["Earth", "Mars", "Venus", "Jupiter"],
+                question: "Which is the largest Indian State in terms of Population",
+                options: ["Madhya Pradesh", "Uttar Pradesh", "Odisha", "Gujarat"],
                 correctAnswer: 1,
             },
-            // Add more questions here
+            {
+                question: "Which is the Richest State in India",
+                options: ["Maharashtra", "Tamil Nadu", "Karnataka", "Gujarat"],
+                correctAnswer: 0,  
+            }
+            
         ];
 
         let currentQuestionIndex = 0;
@@ -153,13 +158,13 @@
             const password = document.getElementById("password").value;
 
             // You can replace this with your actual login logic.
-            // For this example, I'll just check if the username is "user" and password is "password".
-            if (username === "user" && password === "password") {
+            // For this example, I'll just check if the username is "anyuser" and password is "makeyourown".
+            if (username === "anyuser" && password === "makeyourown") {
                 loginContainer.style.display = "none";
                 quizContainer.style.display = "block";
                 loadQuestion();
             } else {
-                alert("Login failed. Please try again.");
+                alert("Wrong Credentials. Don't try to act smart🙃");
             }
         });
 
@@ -181,9 +186,9 @@
             const currentQuestion = questions[currentQuestionIndex];
             if (selectedIndex === currentQuestion.correctAnswer) {
                 score++;
-                resultElement.innerText = "Correct!";
+                resultElement.innerText = "Correct!🎉";
             } else {
-                resultElement.innerText = "Incorrect!";
+                resultElement.innerText = "Incorrect!😥";
             }
 
             optionsContainer.querySelectorAll(".option").forEach((button) => {
